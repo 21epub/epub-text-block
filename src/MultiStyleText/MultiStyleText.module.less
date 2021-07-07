@@ -1,0 +1,813 @@
+// 间距 0.5、0.8、1、1.2、1.5、2
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('fonts/fontawesome-webfont.eot');
+  src: url('fonts/fontawesome-webfont.eot') format('embedded-opentype'),
+    url('fonts/fontawesome-webfont.woff') format('woff'),
+    url('fonts/fontawesome-webfont.ttf') format('truetype'),
+    url('fonts/fontawesome-webfont.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:before,
+:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.spacing-05 div {
+  padding-bottom: 0.5em
+}
+
+.spacing-08 div {
+  padding-bottom: 0.8em
+}
+
+.ep-spacing-10 div {
+  padding-bottom: 1em
+}
+
+.spacing-12 div {
+  padding-bottom: 1.2em
+}
+
+.spacing-15 div {
+  padding-bottom: 1.5em
+}
+
+.spacing-20 div {
+  padding-bottom: 2em
+}
+
+// 有序列表-圆形
+.ep-list01 {
+  counter-reset: Num;
+
+  div {
+    padding-left: 1.8em;
+    position: relative;
+    counter-increment: Num 1;
+
+    &::before {
+      width: 1.5em;
+      height: 1.5em;
+      background-color: #3C8FF7 !important;
+      font-family: sans-serif;
+      content: counter(Num);
+      display: -webkit-box;
+      display: flex;
+      position: absolute;
+      top: 0.2em;
+      left: 0px;
+      -webkit-box-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      align-items: center;
+      color: #fff;
+      border-radius: 30px;
+      font-size: 0.8em;
+      line-height: 1em !important
+    }
+  }
+}
+
+// 有序列表-方形
+.ep-list02 {
+  counter-reset: Num;
+
+  div {
+    padding-left: 1.8em;
+    position: relative;
+    counter-increment: Num 1;
+
+    &::before {
+      width: 1.5em;
+      height: 1.5em;
+      background-color: #3C8FF7 !important;
+      font-family: sans-serif;
+      content: counter(Num);
+      display: -webkit-box;
+      display: flex;
+      position: absolute;
+      top: 0.2em;
+      left: 0px;
+      -webkit-box-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      align-items: center;
+      color: #fff;
+      border-radius: 2px;
+      font-size: 0.8em;
+      line-height: 1em !important
+    }
+  }
+}
+
+// 有序列表-标题
+.ep-list04 {
+  counter-reset: Num;
+
+  div {
+    position: relative;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    background-image: -webkit-gradient(linear, right top, left top, from(#5F94FF), to(#6C79D7));
+    background-image: -webkit-linear-gradient(right, #5F94FF 0%, #6C79D7 100%);
+    background-image: linear-gradient(270deg, #5F94FF 0%, #6C79D7 100%);
+    box-shadow: 0 2px 15px 0 rgba(180, 180, 180, 0.41);
+    counter-increment: Num;
+    padding: 0 10px 0 0 !important;
+    margin-bottom: 0.6em;
+
+    &::before {
+      font-family: sans-serif;
+      content: counter(Num);
+      background-color: #004DA1 !important;
+      position: relative;
+      top: 0px;
+      left: 0px;
+      bottom: 0px;
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      align-items: center;
+      -webkit-box-flex: 0;
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: auto;
+      width: 3em;
+      height: 3em;
+      margin-right: 1em;
+      color: #fff;
+      font-size: 0.8em;
+      line-height: 1em !important
+    }
+  }
+}
+
+// 无序列表
+.ep-list03 {
+  div {
+    padding-left: 1.2em;
+    position: relative;
+
+    &::before {
+      color: currentColor;
+      line-height: 1.5em;
+      content: "●";
+      font-size: 1em;
+      position: absolute;
+      top: 0em;
+      left: 0px
+    }
+  }
+}
+
+// 信息提示-info
+.ep-alert-info {
+  padding: 16px 16px 16px 4.2em;
+  background-color: #e6f7ff;
+  border: 1px solid #91d5ff;
+  position: relative;
+  line-height: 1.5em;
+
+  &::before {
+    font-family: FontAwesome;
+    content: "";
+    font-size: 1.4em;
+    color: #1890ff;
+    width: 1.5em;
+    height: 1.5em;
+    border: 1px solid;
+    border-radius: 30px;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    position: absolute;
+    top: 13px;
+    left: 0.8em
+  }
+
+  div:first-child {
+    font-size: 1.2em;
+    margin-bottom: 0.5em
+  }
+}
+
+// 信息提示-success
+.ep-alert-success {
+  padding: 16px 16px 16px 4.2em;
+  background-color: #f6ffed;
+  border: 1px solid #b7eb8f;
+  position: relative;
+  line-height: 1.5em;
+
+  &::before {
+    font-family: FontAwesome;
+    content: "\f00c";
+    font-size: 1.4em;
+    color: #52c41a;
+    width: 1.5em;
+    height: 1.5em;
+    border: 1px solid;
+    border-radius: 30px;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    position: absolute;
+    top: 13px;
+    left: 0.8em
+  }
+
+  div:first-child {
+    font-size: 1.2em;
+    margin-bottom: 0.5em
+  }
+}
+
+
+.ep-alert-warning {
+  padding: 16px 16px 16px 4.2em;
+  background-color: #fffbe6;
+  border: 1px solid #ffe58f;
+  position: relative;
+  line-height: 1.5em;
+
+  &::before {
+    font-family: FontAwesome;
+    content: "\f12a";
+    font-size: 1.4em;
+    color: #faad14;
+    width: 1.5em;
+    height: 1.5em;
+    border: 1px solid;
+    border-radius: 30px;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    position: absolute;
+    top: 13px;
+    left: 0.8em
+  }
+
+  div:first-child {
+    font-size: 1.2em;
+    margin-bottom: 0.5em
+  }
+}
+
+
+.ep-alert-warning2 {
+  padding: 16px 16px 16px 5.2em;
+  background-color: #fffbe6;
+  border: 1px solid #ffe58f;
+  position: relative;
+  line-height: 1.5em;
+
+  &::before {
+    font-family: FontAwesome;
+    content: "\f071";
+    font-size: 2.5em;
+    color: #ff5722;
+    width: 1.5em;
+    height: 1.5em;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    position: absolute;
+    top: 13px;
+    left: 0.2em
+  }
+
+  div:first-child {
+    font-size: 1.2em;
+    margin-bottom: 0.5em
+  }
+}
+
+
+.ep-alert-error {
+  padding: 16px 16px 16px 4.2em;
+  background-color: #fff2f0;
+  border: 1px solid #ffccc7;
+  position: relative;
+  line-height: 1.5em;
+
+  &::before {
+    font-family: FontAwesome;
+    content: "\f00d";
+    font-size: 1.4em;
+    color: #ff4d4f;
+    width: 1.5em;
+    height: 1.5em;
+    border: 1px solid;
+    border-radius: 30px;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    position: absolute;
+    top: 13px;
+    left: 0.8em
+  }
+
+  div:first-child {
+    font-size: 1.2em;
+    margin-bottom: 0.5em
+  }
+}
+
+//事件轴
+.ep-timeline {
+  div {
+    padding-left: 2em;
+    position: relative;
+
+    &::before {
+      display: -webkit-box;
+      display: flex;
+      content: "◉";
+      width: 1px;
+      height: 100%;
+      text-indent: -1px;
+      border-left: 1px dashed currentColor;
+      position: absolute;
+      font-size: 0.8em;
+      vertical-align: text-top;
+      line-height: 0.9em;
+      color: #3C8FF7;
+      top: 0.5em;
+      left: 1em;
+      padding-right: 1px;
+      -webkit-box-pack: center;
+      justify-content: center
+    }
+
+    &:last-child:before {
+      height: 0.8em
+    }
+  }
+}
+
+// 二级架构图
+.ep-blocks {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  position: relative;
+
+  div {
+    min-width: 80px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;
+    border: 1px solid;
+    -webkit-box-flex: 1;
+    flex: 1 1 0%;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 6px 16px -8px rgba(0, 0, 0, 0.08), 0 9px 28px 0 rgba(0, 0, 0, 0.05), 0 12px 48px 16px rgba(0, 0, 0, 0.03);
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 100%;
+      height: 50px;
+      padding-left: calc(100% + 22px);
+      margin-left: -11px;
+      border-top: 1px solid currentColor;
+      width: calc(100% + 22px)
+    }
+
+    &:after {
+      content: "▼";
+      width: 1px;
+      height: 50px;
+      font-size: 12px !important;
+      line-height: 0.9em !important;
+      background-color: currentColor;
+      position: absolute;
+      left: 50%;
+      bottom: 100%;
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-pack: center;
+      justify-content: center;
+      -webkit-box-align: end;
+      align-items: flex-end
+    }
+
+    &:first-child {
+      position: absolute;
+      text-align: center;
+      bottom: calc(100% - 67px);
+      // bottom: calc(100% + 100px);
+      margin-left: auto;
+      margin-right: auto;
+
+      &:after {
+        content: "▼";
+        width: 1px;
+        height: 50px;
+        font-size: 12px !important;
+        line-height: 0.9em !important;
+        background-color: currentColor;
+        position: absolute;
+        left: 50%;
+        top: 100%;
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-pack: center;
+        justify-content: center;
+        -webkit-box-align: end;
+        align-items: flex-end
+      }
+
+      &:before {
+        content: "";
+        display: none
+      }
+
+    }
+
+    &:nth-child(2)::before {
+      content: "";
+      padding-left: calc(50% + 11px);
+      margin-left: 50%
+    }
+
+    &:last-child:before {
+      content: "";
+      padding-left: calc(50% + 11px);
+      margin-right: 50%;
+      width: calc(50% + 11px)
+    }
+  }
+}
+
+// 指引块--剪头下
+.ep-block-down {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  align-items: center;
+  position: relative;
+  display: -webkit-box;
+  display: flex;
+  line-height: 1em !important;
+
+  div {
+    position: relative;
+    font-size: 12px;
+
+    &::before {
+      content: "";
+      width: 1px;
+      background-color: currentColor;
+      top: 0px;
+      bottom: 0px;
+      position: absolute;
+      left: 50%;
+      line-height: 1em
+    }
+
+    &:first-child {
+      min-width: 80px;
+      padding: 10px;
+      font-size: 1em !important;
+      border: 1px solid currentColor;
+      -webkit-box-flex: 1;
+      flex: 1 1 0%;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 6px 16px -8px rgba(0, 0, 0, 0.08), 0 9px 28px 0 rgba(0, 0, 0, 0.05), 0 12px 48px 16px rgba(0, 0, 0, 0.03);
+
+      &:before {
+        display: none !important
+      }
+    }
+
+    &:last-child:before {
+      content: " ▼";
+      width: 1px;
+      background-color: currentColor;
+      top: 0px;
+      bottom: 0px;
+      position: absolute;
+      left: 50%;
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-pack: center;
+      justify-content: center;
+      -webkit-box-align: end;
+      align-items: flex-end;
+      line-height: 0.9em
+    }
+
+  }
+}
+
+// 指引块--剪头上
+.ep-block-up {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  align-items: center;
+  position: relative;
+  display: -webkit-box;
+  display: flex;
+  flex-direction: column-reverse;
+  line-height: 1em !important;
+
+  div {
+    position: relative;
+    font-size: 12px;
+
+    &:before {
+      content: "";
+      width: 1px;
+      background-color: currentColor;
+      top: 0px;
+      bottom: 0px;
+      position: absolute;
+      left: 50%;
+      line-height: 1em
+    }
+
+    &:first-child {
+      min-width: 80px;
+      padding: 10px;
+      font-size: 1em !important;
+      border: 1px solid currentColor;
+      -webkit-box-flex: 1;
+      flex: 1 1 0%;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 6px 16px -8px rgba(0, 0, 0, 0.08), 0 9px 28px 0 rgba(0, 0, 0, 0.05), 0 12px 48px 16px rgba(0, 0, 0, 0.03);
+
+      &::before {
+        display: none !important
+      }
+    }
+
+    &:last-child:before {
+      content: " ▲";
+      width: 1px;
+      background-color: currentColor;
+      top: 0px;
+      bottom: 0px;
+      position: absolute;
+      left: 50%;
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-pack: center;
+      justify-content: center;
+      -webkit-box-align: start;
+      align-items: flex-start;
+      line-height: 0.9em;
+      // height: 0px;
+    }
+  }
+}
+
+// 指引块--剪头右
+.ep-block-right {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  line-height: 1em !important;
+
+  div {
+    position: relative;
+    font-size: 12px;
+    min-width: 1em;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0%;
+
+    &:before {
+      content: "";
+      height: 1px;
+      background-color: currentColor;
+      left: 0px;
+      right: 0px;
+      position: absolute;
+      top: 50%;
+      line-height: 1em
+    }
+
+    &:first-child {
+      -webkit-box-flex: 1;
+      flex: 1 1 0%;
+      -webkit-box-flex: 0;
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: auto;
+      min-width: 80px;
+      padding: 10px;
+      font-size: 1em !important;
+      border: 1px solid currentColor;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 6px 16px -8px rgba(0, 0, 0, 0.08), 0 9px 28px 0 rgba(0, 0, 0, 0.05), 0 12px 48px 16px rgba(0, 0, 0, 0.03);
+
+      &:before {
+        display: none !important
+      }
+
+    }
+
+    &:last-child:before {
+      content: " ▶︎";
+      text-indent: 2px;
+      height: 1px;
+      background-color: currentColor;
+      left: 0px;
+      right: 0px;
+      position: absolute;
+      top: 50%;
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+      -webkit-box-pack: end;
+      justify-content: flex-end;
+      line-height: 1em
+    }
+  }
+}
+
+// 指引块--剪头左
+.ep-block-left {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  line-height: 1em !important;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  flex-direction: row-reverse;
+
+  div {
+    position: relative;
+    font-size: 12px;
+    min-width: 1em;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0%;
+
+    &::before {
+      content: "";
+      height: 1px;
+      background-color: currentColor;
+      left: 0px;
+      right: 0px;
+      position: absolute;
+      top: 50%;
+      line-height: 1em
+    }
+
+    &:first-child {
+      -webkit-box-flex: 1;
+      flex: 1 1 0%;
+      -webkit-box-flex: 0;
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: auto;
+      min-width: 80px;
+      padding: 10px;
+      font-size: 1em !important;
+      border: 1px solid currentColor;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 6px 16px -8px rgba(0, 0, 0, 0.08), 0 9px 28px 0 rgba(0, 0, 0, 0.05), 0 12px 48px 16px rgba(0, 0, 0, 0.03);
+
+      &:before {
+        display: none !important
+      }
+    }
+
+    &:last-child:before {
+      content: "◀︎";
+      text-indent: -2px;
+      height: 1px;
+      background-color: currentColor;
+      left: 0px;
+      right: 0px;
+      position: absolute;
+      top: 50%;
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+      line-height: 1em
+    }
+  }
+}
+
+// 信息卡
+.ep-card01 {
+  padding: 0px 0px 0.5em 0 !important;
+  border: 1px solid currentColor;
+  box-shadow: 0 6px 16px -8px rgba(0, 0, 0, 0.08), 0 9px 28px 0 rgba(0, 0, 0, 0.05), 0 12px 48px 16px rgba(0, 0, 0, 0.03);
+  border-radius: 2px;
+
+  div {
+    padding-left: 1em;
+    padding-right: 1em;
+    text-align: justify;
+
+    &:first-child {
+      padding: 0.5em 1em !important;
+      text-align: center !important;
+      line-height: 1em !important;
+      border-bottom: 1px solid currentColor;
+      margin-bottom: 0.6em;
+      font-size: 1.2em
+    }
+  }
+}
+
+// 信息卡---无序列表
+.ep-card02 {
+  padding: 0px 0px 0.5em 0 !important;
+  border: 1px solid currentColor;
+  box-shadow: 0 6px 16px -8px rgba(0, 0, 0, 0.08), 0 9px 28px 0 rgba(0, 0, 0, 0.05), 0 12px 48px 16px rgba(0, 0, 0, 0.03);
+  border-radius: 2px;
+
+  div {
+    padding-left: 2em;
+    padding-right: 1em;
+    text-align: justify;
+    position: relative;
+
+    &::before {
+      color: currentColor;
+      line-height: 1.5em;
+      content: "●";
+      font-size: 1em;
+      position: absolute;
+      top: 0em;
+      left: 1em
+    }
+
+    &:first-child {
+      padding: 0.5em 1em !important;
+      text-align: center !important;
+      line-height: 1em !important;
+      border-bottom: 1px solid currentColor;
+      margin-bottom: 0.6em;
+      font-size: 1.2em;
+
+      &::before {
+        display: none
+      }
+    }
+  }
+}
+
+.ep-blue div:before {
+  background-color: #3C8FF7 !important
+}
+
+.ep-green div:before {
+  background-color: #6FC040 !important
+}
+
+.ep-gold div:before {
+  background-color: #F1AF41 !important
+}
+
+.ep-red div:before {
+  background-color: #EF5B56 !important
+}
