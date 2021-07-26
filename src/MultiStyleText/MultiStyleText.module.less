@@ -1,43 +1,31 @@
-// 间距 0.5、0.8、1、1.2、1.5、2
-@font-face {
-  font-family: 'FontAwesome';
-  src: url('fonts/fontawesome-webfont.eot');
-  src: url('fonts/fontawesome-webfont.eot') format('embedded-opentype'),
-    url('fonts/fontawesome-webfont.woff') format('woff'),
-    url('fonts/fontawesome-webfont.ttf') format('truetype'),
-    url('fonts/fontawesome-webfont.svg') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-:before,
-:after {
+::before,
+::after {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 .spacing-05 div {
-  padding-bottom: 0.5em
+  padding-bottom: 0.5em;
 }
 
 .spacing-08 div {
-  padding-bottom: 0.8em
+  padding-bottom: 0.8em;
 }
 
-.ep-spacing-10 div {
-  padding-bottom: 1em
+.spacing-10 div {
+  padding-bottom: 1em;
 }
 
 .spacing-12 div {
-  padding-bottom: 1.2em
+  padding-bottom: 1.2em;
 }
 
 .spacing-15 div {
-  padding-bottom: 1.5em
+  padding-bottom: 1.5em;
 }
 
 .spacing-20 div {
-  padding-bottom: 2em
+  padding-bottom: 2em;
 }
 
 // 有序列表-圆形
@@ -45,29 +33,29 @@
   counter-reset: Num;
 
   div {
-    padding-left: 1.8em;
     position: relative;
+    padding-left: 1.8em;
     counter-increment: Num 1;
 
     &::before {
-      width: 1.5em;
-      height: 1.5em;
-      background-color: #3C8FF7 !important;
-      font-family: sans-serif;
-      content: counter(Num);
-      display: -webkit-box;
-      display: flex;
       position: absolute;
       top: 0.2em;
-      left: 0px;
-      -webkit-box-pack: center;
-      justify-content: center;
-      -webkit-box-align: center;
+      left: 0;
+      display: -webkit-box;
+      display: flex;
       align-items: center;
+      justify-content: center;
+      width: 1.5em;
+      height: 1.5em;
       color: #fff;
-      border-radius: 30px;
       font-size: 0.8em;
-      line-height: 1em !important
+      font-family: sans-serif;
+      line-height: 1em !important;
+      background-color: #3c8ff7 !important;
+      border-radius: 30px;
+      content: counter(Num);
+      -webkit-box-pack: center;
+      -webkit-box-align: center;
     }
   }
 }
@@ -77,29 +65,29 @@
   counter-reset: Num;
 
   div {
-    padding-left: 1.8em;
     position: relative;
+    padding-left: 1.8em;
     counter-increment: Num 1;
 
     &::before {
-      width: 1.5em;
-      height: 1.5em;
-      background-color: #3C8FF7 !important;
-      font-family: sans-serif;
-      content: counter(Num);
-      display: -webkit-box;
-      display: flex;
       position: absolute;
       top: 0.2em;
-      left: 0px;
-      -webkit-box-pack: center;
-      justify-content: center;
-      -webkit-box-align: center;
+      left: 0;
+      display: -webkit-box;
+      display: flex;
       align-items: center;
+      justify-content: center;
+      width: 1.5em;
+      height: 1.5em;
       color: #fff;
-      border-radius: 2px;
       font-size: 0.8em;
-      line-height: 1em !important
+      font-family: sans-serif;
+      line-height: 1em !important;
+      background-color: #3c8ff7 !important;
+      border-radius: 2px;
+      content: counter(Num);
+      -webkit-box-pack: center;
+      -webkit-box-align: center;
     }
   }
 }
@@ -110,42 +98,42 @@
 
   div {
     position: relative;
-    display: -webkit-box;
+    display: -webkit-flex;
     display: flex;
-    -webkit-box-align: center;
+    -webkit-align-items: center;
     align-items: center;
-    background-image: -webkit-gradient(linear, right top, left top, from(#5F94FF), to(#6C79D7));
-    background-image: -webkit-linear-gradient(right, #5F94FF 0%, #6C79D7 100%);
-    background-image: linear-gradient(270deg, #5F94FF 0%, #6C79D7 100%);
-    box-shadow: 0 2px 15px 0 rgba(180, 180, 180, 0.41);
-    counter-increment: Num;
-    padding: 0 10px 0 0 !important;
     margin-bottom: 0.6em;
+    padding: 0 10px 0 0;
+    background-image: linear-gradient(270deg, #5f94ff 0%, #6c79d7 100%);
+    box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.1);
+    counter-increment: Num 1;
 
     &::before {
-      font-family: sans-serif;
-      content: counter(Num);
-      background-color: #004DA1 !important;
       position: relative;
-      top: 0px;
-      left: 0px;
-      bottom: 0px;
-      display: -webkit-box;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      display: -webkit-flex;
       display: flex;
-      -webkit-box-pack: center;
-      justify-content: center;
-      -webkit-box-align: center;
-      align-items: center;
-      -webkit-box-flex: 0;
-      flex-grow: 0;
-      flex-shrink: 0;
+      -webkit-flex-basis: auto;
       flex-basis: auto;
+      -webkit-flex-grow: 0;
+      flex-grow: 0;
+      -webkit-flex-shrink: 0;
+      flex-shrink: 0;
+      -webkit-align-items: center;
+      align-items: center;
+      -webkit-justify-content: center;
+      justify-content: center;
       width: 3em;
       height: 3em;
       margin-right: 1em;
       color: #fff;
       font-size: 0.8em;
-      line-height: 1em !important
+      font-family: sans-serif;
+      line-height: 1em !important;
+      background-color: #004da1 !important;
+      content: counter(Num);
     }
   }
 }
@@ -153,445 +141,447 @@
 // 无序列表
 .ep-list03 {
   div {
-    padding-left: 1.2em;
     position: relative;
+    padding-left: 1.2em;
 
     &::before {
-      color: currentColor;
-      line-height: 1.5em;
-      content: "●";
-      font-size: 1em;
       position: absolute;
-      top: 0em;
-      left: 0px
+      top: 0;
+      left: 0;
+      color: currentColor;
+      font-size: 1em;
+      line-height: 1.5em;
+      content: '●';
     }
   }
 }
 
 // 信息提示-info
 .ep-alert-info {
+  position: relative;
   padding: 16px 16px 16px 4.2em;
+  line-height: 1.5em;
   background-color: #e6f7ff;
   border: 1px solid #91d5ff;
-  position: relative;
-  line-height: 1.5em;
 
   &::before {
-    font-family: FontAwesome;
-    content: "";
-    font-size: 1.4em;
-    color: #1890ff;
-    width: 1.5em;
-    height: 1.5em;
-    border: 1px solid;
-    border-radius: 30px;
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    align-items: center;
     position: absolute;
     top: 13px;
-    left: 0.8em
+    left: 0.8em;
+    display: -webkit-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5em;
+    height: 1.5em;
+    color: #1890ff;
+    font-size: 1.4em;
+    font-family: FontAwesome;
+    border: 1px solid;
+    border-radius: 30px;
+    content: '';
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
   }
 
   div:first-child {
+    margin-bottom: 0.5em;
     font-size: 1.2em;
-    margin-bottom: 0.5em
   }
 }
 
 // 信息提示-success
 .ep-alert-success {
+  position: relative;
   padding: 16px 16px 16px 4.2em;
+  line-height: 1.5em;
   background-color: #f6ffed;
   border: 1px solid #b7eb8f;
-  position: relative;
-  line-height: 1.5em;
 
   &::before {
-    font-family: FontAwesome;
-    content: "\f00c";
-    font-size: 1.4em;
-    color: #52c41a;
-    width: 1.5em;
-    height: 1.5em;
-    border: 1px solid;
-    border-radius: 30px;
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    align-items: center;
     position: absolute;
     top: 13px;
-    left: 0.8em
+    left: 0.8em;
+    display: -webkit-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5em;
+    height: 1.5em;
+    color: #52c41a;
+    font-size: 1.4em;
+    font-family: FontAwesome;
+    border: 1px solid;
+    border-radius: 30px;
+    content: '\f00c';
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
   }
 
   div:first-child {
+    margin-bottom: 0.5em;
     font-size: 1.2em;
-    margin-bottom: 0.5em
   }
 }
-
 
 .ep-alert-warning {
+  position: relative;
   padding: 16px 16px 16px 4.2em;
+  line-height: 1.5em;
   background-color: #fffbe6;
   border: 1px solid #ffe58f;
-  position: relative;
-  line-height: 1.5em;
 
   &::before {
-    font-family: FontAwesome;
-    content: "\f12a";
-    font-size: 1.4em;
-    color: #faad14;
-    width: 1.5em;
-    height: 1.5em;
-    border: 1px solid;
-    border-radius: 30px;
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    align-items: center;
     position: absolute;
     top: 13px;
-    left: 0.8em
+    left: 0.8em;
+    display: -webkit-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5em;
+    height: 1.5em;
+    color: #faad14;
+    font-size: 1.4em;
+    font-family: FontAwesome;
+    border: 1px solid;
+    border-radius: 30px;
+    content: '\f12a';
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
   }
 
   div:first-child {
+    margin-bottom: 0.5em;
     font-size: 1.2em;
-    margin-bottom: 0.5em
   }
 }
-
 
 .ep-alert-warning2 {
+  position: relative;
   padding: 16px 16px 16px 5.2em;
+  line-height: 1.5em;
   background-color: #fffbe6;
   border: 1px solid #ffe58f;
-  position: relative;
-  line-height: 1.5em;
 
   &::before {
-    font-family: FontAwesome;
-    content: "\f071";
-    font-size: 2.5em;
-    color: #ff5722;
-    width: 1.5em;
-    height: 1.5em;
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    align-items: center;
     position: absolute;
     top: 13px;
-    left: 0.2em
+    left: 0.2em;
+    display: -webkit-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5em;
+    height: 1.5em;
+    color: #ff5722;
+    font-size: 2.5em;
+    font-family: FontAwesome;
+    content: '\f071';
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
   }
 
   div:first-child {
+    margin-bottom: 0.5em;
     font-size: 1.2em;
-    margin-bottom: 0.5em
   }
 }
 
-
 .ep-alert-error {
+  position: relative;
   padding: 16px 16px 16px 4.2em;
+  line-height: 1.5em;
   background-color: #fff2f0;
   border: 1px solid #ffccc7;
-  position: relative;
-  line-height: 1.5em;
 
   &::before {
-    font-family: FontAwesome;
-    content: "\f00d";
-    font-size: 1.4em;
-    color: #ff4d4f;
-    width: 1.5em;
-    height: 1.5em;
-    border: 1px solid;
-    border-radius: 30px;
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    align-items: center;
     position: absolute;
     top: 13px;
-    left: 0.8em
+    left: 0.8em;
+    display: -webkit-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5em;
+    height: 1.5em;
+    color: #ff4d4f;
+    font-size: 1.4em;
+    font-family: FontAwesome;
+    border: 1px solid;
+    border-radius: 30px;
+    content: '\f00d';
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
   }
 
   div:first-child {
+    margin-bottom: 0.5em;
     font-size: 1.2em;
-    margin-bottom: 0.5em
   }
 }
 
 //事件轴
 .ep-timeline {
-  div {
-    padding-left: 2em;
+  & > div {
     position: relative;
+    padding-left: 2em;
 
-    &::before {
-      display: -webkit-box;
-      display: flex;
-      content: "◉";
-      width: 1px;
-      height: 100%;
-      text-indent: -1px;
-      border-left: 1px dashed currentColor;
-      position: absolute;
-      font-size: 0.8em;
-      vertical-align: text-top;
-      line-height: 0.9em;
-      color: #3C8FF7;
-      top: 0.5em;
-      left: 1em;
-      padding-right: 1px;
-      -webkit-box-pack: center;
-      justify-content: center
+    &::first-line {
+      font-weight: bold;
     }
 
-    &:last-child:before {
-      height: 0.8em
+    &::before {
+      position: absolute;
+      top: 0.5em;
+      left: 1em;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-justify-content: center;
+      justify-content: center;
+      width: 1px;
+      height: 100%;
+      padding-right: 1px;
+      color: #3c8ff7;
+      font-size: 0.8em;
+      line-height: 0.9em;
+      text-indent: -1px;
+      vertical-align: text-top;
+      border-left: 1px dashed currentColor;
+      content: '◉';
+    }
+
+    &:last-child::before {
+      height: 0.8em;
     }
   }
 }
 
 // 二级架构图
 .ep-blocks {
+  position: relative;
   display: -webkit-box;
   display: flex;
-  -webkit-box-pack: center;
   justify-content: center;
-  position: relative;
+  -webkit-box-pack: center;
 
   div {
-    min-width: 80px;
-    margin-left: 10px;
-    margin-right: 10px;
-    padding: 10px;
-    border: 1px solid;
-    -webkit-box-flex: 1;
-    flex: 1 1 0%;
-    text-align: center;
     position: relative;
-    box-shadow: 0 6px 16px -8px rgba(0, 0, 0, 0.08), 0 9px 28px 0 rgba(0, 0, 0, 0.05), 0 12px 48px 16px rgba(0, 0, 0, 0.03);
+    flex: 1 1 0%;
+    min-width: 80px;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid;
+    box-shadow: 0 6px 16px -8px rgba(0, 0, 0, 0.08),
+      0 9px 28px 0 rgba(0, 0, 0, 0.05), 0 12px 48px 16px rgba(0, 0, 0, 0.03);
+    -webkit-box-flex: 1;
 
-    &:before {
-      content: "";
+    &::before {
       position: absolute;
-      left: 0;
       bottom: 100%;
+      left: 0;
+      width: calc(100% + 22px);
       height: 50px;
-      padding-left: calc(100% + 22px);
       margin-left: -11px;
+      padding-left: calc(100% + 22px);
       border-top: 1px solid currentColor;
-      width: calc(100% + 22px)
+      content: '';
     }
 
-    &:after {
-      content: "▼";
+    &::after {
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      display: -webkit-box;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
       width: 1px;
       height: 50px;
       font-size: 12px !important;
       line-height: 0.9em !important;
       background-color: currentColor;
-      position: absolute;
-      left: 50%;
-      bottom: 100%;
-      display: -webkit-box;
-      display: flex;
+      content: '▼';
       -webkit-box-pack: center;
-      justify-content: center;
       -webkit-box-align: end;
-      align-items: flex-end
     }
 
     &:first-child {
       position: absolute;
-      text-align: center;
       bottom: calc(100% - 67px);
+      margin-right: auto;
       // bottom: calc(100% + 100px);
       margin-left: auto;
-      margin-right: auto;
+      text-align: center;
 
-      &:after {
-        content: "▼";
+      &::after {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        display: -webkit-box;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
         width: 1px;
         height: 50px;
         font-size: 12px !important;
         line-height: 0.9em !important;
         background-color: currentColor;
-        position: absolute;
-        left: 50%;
-        top: 100%;
-        display: -webkit-box;
-        display: flex;
+        content: '▼';
         -webkit-box-pack: center;
-        justify-content: center;
         -webkit-box-align: end;
-        align-items: flex-end
       }
 
-      &:before {
-        content: "";
-        display: none
+      &::before {
+        display: none;
+        content: '';
       }
-
     }
 
     &:nth-child(2)::before {
-      content: "";
+      margin-left: 50%;
       padding-left: calc(50% + 11px);
-      margin-left: 50%
+      content: '';
     }
 
-    &:last-child:before {
-      content: "";
-      padding-left: calc(50% + 11px);
+    &:last-child::before {
+      width: calc(50% + 11px);
       margin-right: 50%;
-      width: calc(50% + 11px)
+      padding-left: calc(50% + 11px);
+      content: '';
     }
   }
 }
 
 // 指引块--剪头下
 .ep-block-down {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  flex-direction: column;
-  -webkit-box-pack: start;
-  justify-content: flex-start;
-  -webkit-box-align: center;
-  align-items: center;
   position: relative;
   display: -webkit-box;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
   line-height: 1em !important;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-box-pack: start;
+  -webkit-box-align: center;
 
   div {
     position: relative;
     font-size: 12px;
 
     &::before {
-      content: "";
-      width: 1px;
-      background-color: currentColor;
-      top: 0px;
-      bottom: 0px;
       position: absolute;
+      top: 0;
+      bottom: 0;
       left: 50%;
-      line-height: 1em
+      width: 1px;
+      line-height: 1em;
+      background-color: currentColor;
+      content: '';
     }
 
     &:first-child {
+      position: relative;
+      flex: 1 1 0%;
       min-width: 80px;
       padding: 10px;
       font-size: 1em !important;
-      border: 1px solid currentColor;
-      -webkit-box-flex: 1;
-      flex: 1 1 0%;
       text-align: center;
-      position: relative;
-      box-shadow: 0 6px 16px -8px rgba(0, 0, 0, 0.08), 0 9px 28px 0 rgba(0, 0, 0, 0.05), 0 12px 48px 16px rgba(0, 0, 0, 0.03);
+      border: 1px solid currentColor;
+      box-shadow: 0 6px 16px -8px rgba(0, 0, 0, 0.08),
+        0 9px 28px 0 rgba(0, 0, 0, 0.05), 0 12px 48px 16px rgba(0, 0, 0, 0.03);
+      -webkit-box-flex: 1;
 
-      &:before {
-        display: none !important
+      &::before {
+        display: none !important;
       }
     }
 
-    &:last-child:before {
-      content: " ▼";
-      width: 1px;
-      background-color: currentColor;
-      top: 0px;
-      bottom: 0px;
+    &:last-child::before {
       position: absolute;
+      top: 0;
+      bottom: 0;
       left: 50%;
       display: -webkit-box;
       display: flex;
-      -webkit-box-pack: center;
-      justify-content: center;
-      -webkit-box-align: end;
       align-items: flex-end;
-      line-height: 0.9em
+      justify-content: center;
+      width: 1px;
+      line-height: 0.9em;
+      background-color: currentColor;
+      content: '▼';
+      -webkit-box-pack: center;
+      -webkit-box-align: end;
     }
-
   }
 }
 
 // 指引块--剪头上
 .ep-block-up {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  flex-direction: column;
-  -webkit-box-pack: start;
-  justify-content: flex-start;
-  -webkit-box-align: center;
-  align-items: center;
   position: relative;
   display: -webkit-box;
   display: flex;
+  flex-direction: column;
   flex-direction: column-reverse;
+  align-items: center;
+  justify-content: flex-start;
   line-height: 1em !important;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-box-pack: start;
+  -webkit-box-align: center;
 
   div {
     position: relative;
     font-size: 12px;
 
-    &:before {
-      content: "";
-      width: 1px;
-      background-color: currentColor;
-      top: 0px;
-      bottom: 0px;
+    &::before {
       position: absolute;
+      top: 0;
+      bottom: 0;
       left: 50%;
-      line-height: 1em
+      width: 1px;
+      line-height: 1em;
+      background-color: currentColor;
+      content: '';
     }
 
     &:first-child {
+      position: relative;
+      flex: 1 1 0%;
       min-width: 80px;
       padding: 10px;
       font-size: 1em !important;
-      border: 1px solid currentColor;
-      -webkit-box-flex: 1;
-      flex: 1 1 0%;
       text-align: center;
-      position: relative;
-      box-shadow: 0 6px 16px -8px rgba(0, 0, 0, 0.08), 0 9px 28px 0 rgba(0, 0, 0, 0.05), 0 12px 48px 16px rgba(0, 0, 0, 0.03);
+      border: 1px solid currentColor;
+      box-shadow: 0 6px 16px -8px rgba(0, 0, 0, 0.08),
+        0 9px 28px 0 rgba(0, 0, 0, 0.05), 0 12px 48px 16px rgba(0, 0, 0, 0.03);
+      -webkit-box-flex: 1;
 
       &::before {
-        display: none !important
+        display: none !important;
       }
     }
 
-    &:last-child:before {
-      content: " ▲";
-      width: 1px;
-      background-color: currentColor;
-      top: 0px;
-      bottom: 0px;
+    &:last-child::before {
       position: absolute;
+      top: 0;
+      bottom: 0;
       left: 50%;
       display: -webkit-box;
       display: flex;
-      -webkit-box-pack: center;
-      justify-content: center;
-      -webkit-box-align: start;
       align-items: flex-start;
+      justify-content: center;
+      width: 1px;
       line-height: 0.9em;
+      background-color: currentColor;
+      content: '▲';
+      -webkit-box-pack: center;
+      -webkit-box-align: start;
       // height: 0px;
     }
   }
@@ -601,67 +591,67 @@
 .ep-block-right {
   display: -webkit-box;
   display: flex;
-  -webkit-box-align: center;
   align-items: center;
   line-height: 1em !important;
+  -webkit-box-align: center;
 
   div {
     position: relative;
-    font-size: 12px;
-    min-width: 1em;
-    -webkit-box-flex: 1;
+    flex-basis: 0%;
     flex-grow: 1;
     flex-shrink: 1;
-    flex-basis: 0%;
+    min-width: 1em;
+    font-size: 12px;
+    -webkit-box-flex: 1;
 
-    &:before {
-      content: "";
-      height: 1px;
-      background-color: currentColor;
-      left: 0px;
-      right: 0px;
+    &::before {
       position: absolute;
       top: 50%;
-      line-height: 1em
+      right: 0;
+      left: 0;
+      height: 1px;
+      line-height: 1em;
+      background-color: currentColor;
+      content: '';
     }
 
     &:first-child {
-      -webkit-box-flex: 1;
+      position: relative;
       flex: 1 1 0%;
-      -webkit-box-flex: 0;
+      flex-basis: auto;
       flex-grow: 0;
       flex-shrink: 0;
-      flex-basis: auto;
       min-width: 80px;
       padding: 10px;
       font-size: 1em !important;
-      border: 1px solid currentColor;
       text-align: center;
-      position: relative;
-      box-shadow: 0 6px 16px -8px rgba(0, 0, 0, 0.08), 0 9px 28px 0 rgba(0, 0, 0, 0.05), 0 12px 48px 16px rgba(0, 0, 0, 0.03);
+      border: 1px solid currentColor;
+      box-shadow: 0 6px 16px -8px rgba(0, 0, 0, 0.08),
+        0 9px 28px 0 rgba(0, 0, 0, 0.05), 0 12px 48px 16px rgba(0, 0, 0, 0.03);
+      -webkit-box-flex: 1;
+      -webkit-box-flex: 0;
 
-      &:before {
-        display: none !important
+      &::before {
+        display: none !important;
       }
-
     }
 
-    &:last-child:before {
-      content: " ▶︎";
-      text-indent: 2px;
-      height: 1px;
-      background-color: currentColor;
-      left: 0px;
-      right: 0px;
+    &:last-child::before {
       position: absolute;
       top: 50%;
+      right: 0;
+      left: 0;
       display: -webkit-box;
       display: flex;
-      -webkit-box-align: center;
       align-items: center;
-      -webkit-box-pack: end;
       justify-content: flex-end;
-      line-height: 1em
+      height: 1px;
+      line-height: 1em;
+      text-indent: 2px;
+      background-color: currentColor;
+      content: '▶︎';
+      -webkit-box-align: center;
+      -webkit-box-pack: end;
     }
   }
 }
@@ -670,144 +660,147 @@
 .ep-block-left {
   display: -webkit-box;
   display: flex;
-  -webkit-box-align: center;
+  flex-direction: row-reverse;
   align-items: center;
   line-height: 1em !important;
+  -webkit-box-align: center;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
-  flex-direction: row-reverse;
 
   div {
     position: relative;
-    font-size: 12px;
-    min-width: 1em;
-    -webkit-box-flex: 1;
+    flex-basis: 0%;
     flex-grow: 1;
     flex-shrink: 1;
-    flex-basis: 0%;
+    min-width: 1em;
+    font-size: 12px;
+    -webkit-box-flex: 1;
 
     &::before {
-      content: "";
-      height: 1px;
-      background-color: currentColor;
-      left: 0px;
-      right: 0px;
       position: absolute;
       top: 50%;
-      line-height: 1em
+      right: 0;
+      left: 0;
+      height: 1px;
+      line-height: 1em;
+      background-color: currentColor;
+      content: '';
     }
 
     &:first-child {
-      -webkit-box-flex: 1;
+      position: relative;
       flex: 1 1 0%;
-      -webkit-box-flex: 0;
+      flex-basis: auto;
       flex-grow: 0;
       flex-shrink: 0;
-      flex-basis: auto;
       min-width: 80px;
       padding: 10px;
       font-size: 1em !important;
-      border: 1px solid currentColor;
       text-align: center;
-      position: relative;
-      box-shadow: 0 6px 16px -8px rgba(0, 0, 0, 0.08), 0 9px 28px 0 rgba(0, 0, 0, 0.05), 0 12px 48px 16px rgba(0, 0, 0, 0.03);
+      border: 1px solid currentColor;
+      box-shadow: 0 6px 16px -8px rgba(0, 0, 0, 0.08),
+        0 9px 28px 0 rgba(0, 0, 0, 0.05), 0 12px 48px 16px rgba(0, 0, 0, 0.03);
+      -webkit-box-flex: 1;
+      -webkit-box-flex: 0;
 
-      &:before {
-        display: none !important
+      &::before {
+        display: none !important;
       }
     }
 
-    &:last-child:before {
-      content: "◀︎";
-      text-indent: -2px;
-      height: 1px;
-      background-color: currentColor;
-      left: 0px;
-      right: 0px;
+    &:last-child::before {
       position: absolute;
       top: 50%;
+      right: 0;
+      left: 0;
       display: -webkit-box;
       display: flex;
-      -webkit-box-align: center;
       align-items: center;
-      line-height: 1em
+      height: 1px;
+      line-height: 1em;
+      text-indent: -2px;
+      background-color: currentColor;
+      content: '◀︎';
+      -webkit-box-align: center;
     }
   }
 }
 
 // 信息卡
 .ep-card01 {
-  padding: 0px 0px 0.5em 0 !important;
+  padding: 0 0 0.5em 0 !important;
   border: 1px solid currentColor;
-  box-shadow: 0 6px 16px -8px rgba(0, 0, 0, 0.08), 0 9px 28px 0 rgba(0, 0, 0, 0.05), 0 12px 48px 16px rgba(0, 0, 0, 0.03);
   border-radius: 2px;
+  box-shadow: 0 6px 16px -8px rgba(0, 0, 0, 0.08),
+    0 9px 28px 0 rgba(0, 0, 0, 0.05), 0 12px 48px 16px rgba(0, 0, 0, 0.03);
 
   div {
-    padding-left: 1em;
     padding-right: 1em;
+    padding-left: 1em;
     text-align: justify;
 
     &:first-child {
-      padding: 0.5em 1em !important;
-      text-align: center !important;
-      line-height: 1em !important;
-      border-bottom: 1px solid currentColor;
       margin-bottom: 0.6em;
-      font-size: 1.2em
+      padding: 0.5em 1em !important;
+      font-size: 1.2em;
+      line-height: 1em !important;
+      text-align: center !important;
+      border-bottom: 1px solid currentColor;
     }
   }
 }
 
 // 信息卡---无序列表
 .ep-card02 {
-  padding: 0px 0px 0.5em 0 !important;
+  padding: 0 0 0.5em 0 !important;
   border: 1px solid currentColor;
-  box-shadow: 0 6px 16px -8px rgba(0, 0, 0, 0.08), 0 9px 28px 0 rgba(0, 0, 0, 0.05), 0 12px 48px 16px rgba(0, 0, 0, 0.03);
   border-radius: 2px;
+  box-shadow: 0 6px 16px -8px rgba(0, 0, 0, 0.08),
+    0 9px 28px 0 rgba(0, 0, 0, 0.05), 0 12px 48px 16px rgba(0, 0, 0, 0.03);
 
   div {
-    padding-left: 2em;
-    padding-right: 1em;
-    text-align: justify;
     position: relative;
+    padding-right: 1em;
+    padding-left: 2em;
+    text-align: justify;
 
     &::before {
-      color: currentColor;
-      line-height: 1.5em;
-      content: "●";
-      font-size: 1em;
       position: absolute;
-      top: 0em;
-      left: 1em
+      top: 0;
+      left: 1em;
+      color: currentColor;
+      font-size: 1em;
+      line-height: 1.5em;
+      content: '●';
     }
 
     &:first-child {
-      padding: 0.5em 1em !important;
-      text-align: center !important;
-      line-height: 1em !important;
-      border-bottom: 1px solid currentColor;
       margin-bottom: 0.6em;
+      padding: 0.5em 1em !important;
       font-size: 1.2em;
+      line-height: 1em !important;
+      text-align: center !important;
+      border-bottom: 1px solid currentColor;
 
       &::before {
-        display: none
+        display: none;
       }
     }
   }
 }
 
-.ep-blue div:before {
-  background-color: #3C8FF7 !important
+.ep-blue div::before {
+  background-color: #3c8ff7 !important;
 }
 
-.ep-green div:before {
-  background-color: #6FC040 !important
+.ep-green div::before {
+  background-color: #6fc040 !important;
 }
 
-.ep-gold div:before {
-  background-color: #F1AF41 !important
+.ep-gold div::before {
+  background-color: #f1af41 !important;
 }
 
-.ep-red div:before {
-  background-color: #EF5B56 !important
+.ep-red div::before {
+  background-color: #ef5b56 !important;
 }

@@ -1,7 +1,7 @@
-import { ExampleComponent } from '.'
+import { MultiStyleText } from './MultiStyleText/MultiStyleText'
 
-describe('ExampleComponent', () => {
+describe('MultiStyleText', () => {
   it('is truthy', () => {
-    expect(ExampleComponent).toBeTruthy()
+    expect(MultiStyleText).toBeTruthy()
   })
 })

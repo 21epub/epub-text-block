@@ -1,97 +1,164 @@
+/* eslint-disable prettier/prettier */
+// eslint-disable-next-line no-use-before-define
 import * as React from 'react'
-// import React from "react";
-import ContentEditable from "react-contenteditable";
+import ContentEditable from 'react-contenteditable'
 import styles from './MultiStyleText.module.less'
-import Button from 'antd/es/button'
-import { useEffect, useState } from 'react';
-import { attrs } from './text';
-import { EpubSelect } from '../EpubSelect/EpubSelect';
-// import sanitizeHtml from "sanitize-html";
-// text = view.gettext()
-//                 .replace(/<\/div><br><div>/g, "\n\n\t")
-//                 .replace(/<\/div><br><br><div>/g, "\n\n\n\t")
-//                 .replace(/<\/div><br>/g, "\n\n").replace(/<br><div>/g, "\n\t")
-//                 .replace(/<br>/g, "\n")
-//                 .replace(/<\/div><div>/g, "\n\t")
-//                 .replace(/<div>/g, "\t").replace(/<\/div>/g, "").replace(/\&nbsp;/g, ' ')
-//         } else {
-//             text = view.gettext()
-//                 .replace(/<\/div><br><div>/g, "\n\n")
-//                 .replace(/<\/div><br><br><div>/g, "\n\n\n")
-//                 .replace(/<\/div><br>/g, "\n\n").replace(/<br><div>/g, "\n")
-//                 .replace(/<br>/g, "\n")
-//                 .replace(/<\/div><div>/g, "\n")
-//                 .replace(/<div>/g, "").replace(/<\/div>/g, "").replace(/\&nbsp;/g, ' ')
+import { memo, useEffect, useRef, useState } from 'react'
 
-//                 .replace(/\n/g, "</div><div>").replace(/<div><\/div>/g, "<br>").replace(/ /g,'&nbsp;')
+import sanitizeHtml from 'sanitize-html'
+import { MultiStyleTextProps } from '../type/Style'
 
-interface Props {
-    editorstyle: {
-        [x: string]: string
-    },
-    editable: boolean
-}
-
-
-export const MultiStyleText = ({ editorstyle, editable = true }: Props) => {
-
-    const [CurrentStyle, setCurrentStyle] = useState('')
-
-    const [Html, setHtml] = useState('<div>编辑多样式文本模块</div><div>编辑多样式文本模块</div><div>编辑多样式文本模块</div>')
-
-
-    const init = CurrentStyle === 'ep-blocks' ? { width: '600px', padding: '165px 9px 28px 12px' } : {}
-    const ContentEditableDefauleStyle = {
-        width: '500px',
-        // display: 'inline-block',
-        whiteSpace: 'pre-wrap',
-        wordWrap: 'break-word',
-        wordBreak: 'break-all',
-        minHeight: '30px',
-        ...init
+export const MultiStyleText = memo(
+  ({
+    params: {
+      editorstyle,
+      editable,
+      textStyle,
+      textSpace,
+      content,
+      getMultiText,
+      getHeight
+    }
+  }: MultiStyleTextProps) => {
+    const text: { current?: string } = useRef(content)
+    const [CurrentStyle, setCurrentStyle] = useState(textStyle)
+    const [Editable, setEditable] = useState(editable)
+    const [CurrentSpace, setCurrentSpace] = useState(textSpace)
+    const [Content, setContent] = useState(content)
+    let type = 'input'
+    const sanitizeConf = {
+      allowedTags: ['div', 'br']
     }
 
-    const checkHtml = (htmlStr) => {
-        var reg = /<[^>]+>/g;
-        return reg.test(htmlStr);
+    const init =
+      CurrentStyle === 'ep-blocks'
+        ? { width: '600px', padding: '165px 9px 28px 12px' }
+        : {}
+
+    const ContentEditableDefauleStyle = {
+      width: '100%',
+      whiteSpace: 'pre-wrap',
+      wordWrap: 'break-word',
+      wordBreak: 'break-all',
+      minHeight: '30px',
+      ...init
+    }
+
+    const checkHtml = (htmlStr?: string) => {
+      const reg = /<[^>]+>/g
+      return reg.test(htmlStr || '')
     }
     useEffect(() => {
-        if (!checkHtml(Html)) {
-            setHtml(`<div>${Html}</div>`)
-        }
-        return () => {
+      setCurrentStyle(textStyle)
+    }, [textStyle])
 
-        };
-    }, [CurrentStyle])
-    const handleChange = (evt) => {
-        if (!checkHtml(evt.target.value)) {
-            setHtml(`<div>${evt.target.value}</div>`)
-            return
-        }
-        console.log(3456666, evt.target.value, '<div><br></div>' === evt.target.value, '<br>' === evt.target.value, evt.target.value === "");
-        if ('<div><br></div>' === evt.target.value || '<br>' === evt.target.value || evt.target.value === "") {
-            setHtml('<div><br></div>')
-            return
-        }
-        setHtml(evt.target.value)
-    }
-    const getSelected = (msg) => {
-        const { value } = msg
-        setCurrentStyle(value)
-    }
-    console.log(999999, Html);
+    useEffect(() => {
+      setCurrentSpace(textSpace)
+    }, [textSpace])
 
+    useEffect(() => {
+      setEditable(editable)
+      console.log(666666, text.current)
+
+      if (getMultiText) getMultiText(text.current || '')
+    }, [editable])
+
+    useEffect(() => {
+      setContent(content)
+    }, [content])
+
+    useEffect(() => {
+      if (!checkHtml(text.current)) {
+        text.current = `<div>${text.current}</div>`
+      }
+      if (getHeight) getHeight({ height: null })
+    }, [CurrentStyle, CurrentSpace])
+
+    const handleChange = (evt: {
+      target: { value: string }
+      currentTarget: { clientHeight: number }
+    }) => {
+      if (getHeight) getHeight({ height: evt.currentTarget.clientHeight })
+      // const cleanHtml = evt.target.value
+      const cleanHtml = sanitizeHtml(evt.target.value, sanitizeConf)
+      if (!checkHtml(cleanHtml)) {
+        text.current = `<div>${cleanHtml || '<br>'}</div>`
+        if (type === 'paste') {
+          setContent(text.current)
+        }
+        type = 'input'
+        return
+      }
+      if (
+        cleanHtml === '<div><br></div>' ||
+        cleanHtml === '<br>' ||
+        cleanHtml === ''
+      ) {
+        text.current = '<div><br></div>'
+        if (type === 'paste') {
+          setContent(text.current)
+        }
+        type = 'input'
+        return
+      }
+      text.current = cleanHtml
+      if (type === 'paste') {
+        setContent(text.current)
+      }
+      type = 'input'
+    }
+    const handleBlur = () => {
+      //   const clean = sanitizeHtml(text.current || '', sanitizeConf)
+      console.log(666666)
+    }
+    // const handleFocus = () => {
+    //     console.log(444444, text.current);
+    // }
+    // const handleKeyUp = (e) => {
+    //     console.log(55555, e);
+    // }
+
+    // const handleKeyDown = () => {
+    //     console.log(666666, text.current);
+    // }
+
+    const handlePaste = () => {
+      type = 'paste'
+    }
+    // const handlePastePasteCapture = (e) => {
+    //     console.log(1010110, e, text.current);
+    // }
+    // const onCompositionEnd = (e) => {
+    //     console.log(112121212, e, text.current);
+    // }
+    // const onLoadedData = (e) => {
+    //     console.log(13131413, e, text.current);
+    // }
+    // const c = ''
+    //   const getreg = (v) => {
+    //       console.log(44444, v);
+    //       c = ''
+    //   }
     return (
-        <>
-            <EpubSelect name={'text-style'} getSelected={getSelected}></EpubSelect>
-            <ContentEditable
-                className={`editable ${styles[CurrentStyle]}`}
-                tagName="div"
-                style={{ ...ContentEditableDefauleStyle, ...editorstyle }}
-                html={Html}
-                disabled={!editable}
-                onChange={handleChange}
-            />
-        </>
+      <ContentEditable
+        // innerRef={text}
+        onPaste={handlePaste}
+        // onPasteCapture={handlePastePasteCapture}
+        // onCompositionEnd={onCompositionEnd}
+        // onLoadedData={onLoadedData}
+        onBlur={handleBlur}
+        // onFocus={handleFocus}
+        // onKeyUp={handleKeyUp}
+        // onKeyDown={handleKeyDown}
+        className={`editable ${styles[CurrentStyle || '']} ${
+          styles[CurrentSpace || '']
+        }`}
+        tagName='div'
+        style={{ ...ContentEditableDefauleStyle, ...editorstyle }}
+        html={Content || ''}
+        disabled={!Editable}
+        onChange={handleChange}
+      />
     )
-}
+  }
+)

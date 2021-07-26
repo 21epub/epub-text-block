@@ -15,8 +15,10 @@ module.exports = {
     'function-calc-no-invalid': null,
     'function-url-quotes': 'always',
     'font-family-no-missing-generic-family-keyword': null, // iconfont
-    'plugin/declaration-block-no-ignored-properties': true,
-    'unit-no-unknown': [true, { ignoreUnits: ['rpx'] }]
+    // 'plugin/declaration-block-no-ignored-properties': true,
+    'unit-no-unknown': [true, {
+      ignoreUnits: ['rpx']
+    }]
   },
   ignoreFiles: ['**/*.js', '**/*.jsx', '**/*.tsx', '**/*.ts']
 }

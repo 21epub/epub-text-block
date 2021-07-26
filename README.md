@@ -17,7 +17,7 @@ This is a component for react.
 ## Install
 
 ```bash
-npm install --save text-block
+npm install --save @21epub/text-block
 ```
 
 ## Usage
@@ -25,8 +25,8 @@ npm install --save text-block
 ```tsx
 import React, { Component } from 'react'
 
-import MyComponent from 'text-block'
-import 'text-block/dist/index.css'
+import MyComponent from '@21epub/text-block'
+import '@21epub/text-block/dist/index.css'
 
 class Example extends Component {
   render() {
