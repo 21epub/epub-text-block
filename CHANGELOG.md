@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.13](https://github.com/li-qiuli/text-block/compare/v0.1.12...v0.1.13) (2022-02-24)
+
+
+### Features
+
+* 🎸 新样式调整 ([52890e4](https://github.com/li-qiuli/text-block/commit/52890e40967e7f9d658ddea867671c26feaaf588))
+
 ### 0.1.12 (2022-02-24)
 
 
