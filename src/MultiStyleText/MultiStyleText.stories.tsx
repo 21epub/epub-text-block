@@ -34,7 +34,8 @@ textblock.args = {
   params: {
     editable: true,
     editorstyle: { width: '100%' },
-    textSpace: 'ep-alert-warning',
+    // textSpace: 'ep-alert-info',
+    textSpace: 'ep-list05',
     textStyle: 'spacing-15',
     content: '<div>test</div>',
     getMultiText: getMultiText,
