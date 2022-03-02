@@ -32,10 +32,11 @@ const calculateAdaptiveHeight = (val) => {
 export const textblock = Template.bind({})
 textblock.args = {
   params: {
+    // className: 'test',
     editable: true,
     editorstyle: { width: '100%' },
     // textSpace: 'ep-alert-info',
-    textSpace: 'ep-list05',
+    textSpace: 'ep-alert-warning2',
     textStyle: 'spacing-15',
     content: '<div>test</div>',
     getMultiText: getMultiText,

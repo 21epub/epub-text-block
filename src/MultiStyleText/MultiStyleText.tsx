@@ -12,6 +12,7 @@ import { insertHtmlAtSelectionEnd } from './MultiStyleTextMethod'
 export const MultiStyleText = memo(
   ({
     params: {
+      className = '',
       editorstyle,
       editable,
       textStyle,
@@ -163,7 +164,7 @@ export const MultiStyleText = memo(
         // onFocus={handleFocus}
         // onKeyUp={handleKeyUp}
         // onKeyDown={handleKeyDown}
-        className={`editable ${styles[CurrentStyle || '']} ${
+        className={`editable ${className} ${styles[CurrentStyle || '']} ${
           styles[CurrentSpace || '']
         }`}
         tagName='div'

@@ -9,6 +9,7 @@ export interface MultiStyleTextProps {
     content?: string
     getMultiText?: (text: string) => void
     getHeight?: (value: { height: number | null }) => void
+    className?: string
   }
 }
 
