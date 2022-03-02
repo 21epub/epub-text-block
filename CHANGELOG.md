@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.14](https://github.com/li-qiuli/text-block/compare/v0.1.13...v0.1.14) (2022-03-02)
+
+
+### Features
+
+* 🎸 多样式文本复制粘贴问题 ([bc7ef74](https://github.com/li-qiuli/text-block/commit/bc7ef7454c3c66017d664c6e6a4d97e5e7020c24))
+* 🎸 多样式文本支持传入className ([dd4a4f2](https://github.com/li-qiuli/text-block/commit/dd4a4f204ab0a54f5182b654d6108062c4c61dfb))
+
+
+### Bug Fixes
+
+* 🐛 多样式文本上下间距不一致 ([6b7eab0](https://github.com/li-qiuli/text-block/commit/6b7eab08ab2e63c271fcda5c27f83bfdda3c5126))
+
 ### [0.1.13](https://github.com/li-qiuli/text-block/compare/v0.1.12...v0.1.13) (2022-02-24)
 
 
