@@ -6,12 +6,11 @@ export const insertHtmlAtSelectionEnd = (html: string, isBefore: boolean) => {
     sel = window.getSelection()
     if (sel.getRangeAt && sel.rangeCount) {
       range = window.getSelection()?.getRangeAt(0)
-      range && range?.deleteContents() && range.collapse(isBefore)
+      range && range?.extractContents() && range.collapse(isBefore)
       const el = document.createElement('div')
       el.innerHTML = html
       const frag = document.createDocumentFragment()
       let node
-      // let lastNode
       while ((node = el.firstChild)) {
         frag.appendChild(node)
       }

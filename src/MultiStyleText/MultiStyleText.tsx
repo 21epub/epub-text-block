@@ -59,7 +59,7 @@ export const MultiStyleText = memo(
 
     useEffect(() => {
       setEditable(editable)
-      if (getMultiText) getMultiText(text.current || '')
+      if (getMultiText && editable) getMultiText(text.current || '')
     }, [editable])
 
     // useEffect(() => {
