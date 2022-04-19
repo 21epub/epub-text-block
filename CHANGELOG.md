@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.16](https://github.com/li-qiuli/text-block/compare/v0.1.15...v0.1.16) (2022-04-19)
+
+
+### Features
+
+* 🎸 多样式文本调整 ([c626a32](https://github.com/li-qiuli/text-block/commit/c626a32aded003c2b904c8cb9c34dfb88363a323))
+
 ### [0.1.15](https://github.com/li-qiuli/text-block/compare/v0.1.14...v0.1.15) (2022-03-03)
 
 
