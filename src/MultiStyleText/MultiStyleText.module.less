@@ -4,39 +4,56 @@
   box-sizing: border-box;
 }
 
-.spacing-05 div {
+// .spacing-05 div {
+//   padding-bottom: 0.5em;
+// }
+// .spacing-08 div {
+//   padding-bottom: 0.8em;
+// }
+// .spacing-10 div {
+//   padding-bottom: 1em;
+// }
+// .spacing-12 div {
+//   padding-bottom: 1.2em;
+// }
+// .spacing-15 div {
+//   padding-bottom: 1.5em;
+// }
+// .spacing-20 div {
+//   padding-bottom: 2em;
+// }
+// .spacing-05,
+// .spacing-08,
+// .spacing-10,
+// .spacing-12,
+// .spacing-15,
+// .spacing-20 {
+//   div:last-child {
+//     padding-bottom: 0;
+//   }
+// }
+.spacing-05 div:not(:last-child) {
   padding-bottom: 0.5em;
 }
 
-.spacing-08 div {
+.spacing-08 div:not(:last-child) {
   padding-bottom: 0.8em;
 }
 
-.spacing-10 div {
+.ep-spacing-10 div:not(:last-child) {
   padding-bottom: 1em;
 }
 
-.spacing-12 div {
+.spacing-12 div:not(:last-child) {
   padding-bottom: 1.2em;
 }
 
-.spacing-15 div {
+.spacing-15 div:not(:last-child) {
   padding-bottom: 1.5em;
 }
 
-.spacing-20 div {
+.spacing-20 div:not(:last-child) {
   padding-bottom: 2em;
-}
-
-.spacing-05,
-.spacing-08,
-.spacing-10,
-.spacing-12,
-.spacing-15,
-.spacing-20 {
-  div:last-child {
-    padding-bottom: 0;
-  }
 }
 
 // 有序列表-圆形
@@ -234,7 +251,7 @@
 
   &::before {
     position: absolute;
-    top: 13px;
+    top: 12px;
     left: 0.8em;
     display: -webkit-box;
     display: flex;
@@ -243,7 +260,7 @@
     width: 1.5em;
     height: 1.5em;
     color: #1890ff;
-    font-size: 1.4em;
+    font-size: 1.3em;
     font-family: FontAwesome;
     border: 1px solid;
     border-radius: 30px;
@@ -252,7 +269,7 @@
     -webkit-box-align: center;
   }
 
-  div:first-child {
+  div:first-child:not(:last-child) {
     margin-bottom: 0.5em;
     font-size: 1.2em;
   }
@@ -268,7 +285,7 @@
 
   &::before {
     position: absolute;
-    top: 13px;
+    top: 12px;
     left: 0.8em;
     display: -webkit-box;
     display: flex;
@@ -277,7 +294,7 @@
     width: 1.5em;
     height: 1.5em;
     color: #52c41a;
-    font-size: 1.4em;
+    font-size: 1.3em;
     font-family: FontAwesome;
     border: 1px solid;
     border-radius: 30px;
@@ -286,7 +303,7 @@
     -webkit-box-align: center;
   }
 
-  div:first-child {
+  div:first-child:not(:last-child) {
     margin-bottom: 0.5em;
     font-size: 1.2em;
   }
@@ -301,25 +318,22 @@
 
   &::before {
     position: absolute;
-    top: 13px;
+    top: 12px;
     left: 0.8em;
-    display: -webkit-box;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 1.5em;
     height: 1.5em;
     color: #faad14;
-    font-size: 1.4em;
+    font-size: 1.3em;
     font-family: FontAwesome;
     border: 1px solid;
     border-radius: 30px;
     content: '\f12a';
-    -webkit-box-pack: center;
-    -webkit-box-align: center;
   }
 
-  div:first-child {
+  div:first-child:not(:last-child) {
     margin-bottom: 0.5em;
     font-size: 1.2em;
   }
@@ -327,30 +341,27 @@
 
 .ep-alert-warning2 {
   position: relative;
-  padding: 16px 16px 16px 5.2em;
+  padding: 16px 16px 16px 4.2em;
   line-height: 1.5em;
   background-color: #fffbe6;
   border: 1px solid #ffe58f;
 
   &::before {
     position: absolute;
-    top: 13px;
-    left: 0.2em;
-    display: -webkit-box;
+    top: 12px;
+    left: 0.6em;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 1.5em;
     height: 1.5em;
     color: #ff5722;
-    font-size: 2.5em;
+    font-size: 1.5em;
     font-family: FontAwesome;
     content: '\f071';
-    -webkit-box-pack: center;
-    -webkit-box-align: center;
   }
 
-  div:first-child {
+  div:first-child:not(:last-child) {
     margin-bottom: 0.5em;
     font-size: 1.2em;
   }
@@ -365,25 +376,26 @@
 
   &::before {
     position: absolute;
-    top: 13px;
+    top: 12px;
     left: 0.8em;
-    display: -webkit-box;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 1.5em;
     height: 1.5em;
     color: #ff4d4f;
-    font-size: 1.4em;
+    font-size: 1.3em;
     font-family: FontAwesome;
     border: 1px solid;
     border-radius: 30px;
     content: '\f00d';
-    -webkit-box-pack: center;
-    -webkit-box-align: center;
   }
 
-  div:first-child {
+  // div:first-child {
+  //   margin-bottom: 0.5em;
+  //   font-size: 1.2em;
+  // }
+  div:first-child:not(:last-child) {
     margin-bottom: 0.5em;
     font-size: 1.2em;
   }
