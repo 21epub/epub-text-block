@@ -67,7 +67,7 @@ export const MultiStyleText = memo(
 
     const handleChange = (evt: {
       target: { value: string }
-      currentTarget: { clientHeight: number }
+      currentTarget: { clientHeight: number; innerHTML: string }
     }) => {
       if (
         !evt.currentTarget.innerHTML ||
@@ -85,7 +85,7 @@ export const MultiStyleText = memo(
 
       handleAfterPaste(ev)
       ev.preventDefault()
-      if (getHeight) getHeight({ height: ev.currentTarget.clientHeight })
+      // if (getHeight) getHeight({ height: ev.currentTarget.clientHeight })
     }
     console.log(texts.html)
 

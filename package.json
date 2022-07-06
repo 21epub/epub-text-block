@@ -4,10 +4,10 @@
   "description": "",
   "author": "li-qiuli",
   "license": "MIT",
-  "homepage": "https://github.com/li-qiuli/text-block",
+  "homepage": "https://github.com/21epub/epub-text-block.git",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/li-qiuli/text-block.git"
+    "url": "git+https://github.com/21epub/epub-text-block.git"
   },
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
