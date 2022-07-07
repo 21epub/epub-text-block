@@ -56,7 +56,6 @@ export const handleAfterPaste = (ev) => {
   let sel: any
   if (window.getSelection) {
     sel = window.getSelection()
-    const last = sel?.getRangeAt(0)
     const StartContent = CurrentDom.firstChild
     const EndContent = CurrentDom.lastChild
     if (sel.getRangeAt && sel.rangeCount) {
@@ -75,7 +74,7 @@ export const handleAfterPaste = (ev) => {
         frag.appendChild(node)
       }
       range && range.insertNode(frag)
-      sel.addRange(last)
+      movePointerToEnd(CurrentDom)
     }
   }
 }
@@ -83,4 +82,14 @@ export const handleAfterPaste = (ev) => {
 export const checkHtml = (htmlStr?: string) => {
   const reg = /<[^>]+>/g
   return reg.test(htmlStr || '')
+}
+
+export const movePointerToEnd = (el: HTMLElement) => {
+  el.focus()
+  const range = document.createRange()
+  range.selectNodeContents(el)
+  range.collapse(false)
+  const sel = window.getSelection()
+  sel && sel.removeAllRanges()
+  sel && sel.addRange(range)
 }
