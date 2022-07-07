@@ -27,7 +27,7 @@ export const insertHtmlAtSelectionEnd = (html: string, isBefore: boolean) => {
   }
 }
 
-export const Ize = (str) => {
+export const Ize = (str: string) => {
   const parse = new DOMParser()
   const doc = parse.parseFromString(str, 'text/html')
   return doc.body.innerHTML
@@ -55,6 +55,7 @@ export const handleAfterPaste = (ev) => {
 
   let sel: any
   if (window.getSelection) {
+    const offset = getCurrentSelectionOffset(CurrentDom)
     sel = window.getSelection()
     const StartContent = CurrentDom.firstChild
     const EndContent = CurrentDom.lastChild
@@ -74,7 +75,16 @@ export const handleAfterPaste = (ev) => {
         frag.appendChild(node)
       }
       range && range.insertNode(frag)
-      movePointerToEnd(CurrentDom)
+      if (CurrentDom.children.length) {
+        movePointerToNode(
+          sel,
+          CurrentDom.children[
+            offset < CurrentDom.children.length
+              ? offset
+              : CurrentDom.children.length - 1
+          ]
+        )
+      }
     }
   }
 }
@@ -84,6 +94,10 @@ export const checkHtml = (htmlStr?: string) => {
   return reg.test(htmlStr || '')
 }
 
+/**
+ * 指针移动到结尾
+ * @param el
+ */
 export const movePointerToEnd = (el: HTMLElement) => {
   el.focus()
   const range = document.createRange()
@@ -92,4 +106,64 @@ export const movePointerToEnd = (el: HTMLElement) => {
   const sel = window.getSelection()
   sel && sel.removeAllRanges()
   sel && sel.addRange(range)
+}
+
+/**
+ * 指针移动到某个node节点上
+ * @param sel
+ * @param el
+ */
+export const movePointerToNode = (sel: Selection, el: HTMLElement) => {
+  sel && sel.removeAllRanges()
+  const range = new Range()
+  if (el?.hasChildNodes())
+    range.selectNodeContents(el.childNodes[el.childNodes.length - 1])
+  else range.selectNode(el)
+  sel && sel.addRange(range)
+  sel.collapseToEnd()
+}
+
+/**
+ * 获取 el 元素在 父容器的 中的位置
+ * @param el
+ * @returns
+ */
+export const getElementIndexByParent = (el: HTMLElement | Node) => {
+  let result = 0
+  Array.from(el.parentElement?.children || []).forEach((i, index) => {
+    if (el === i) result = index
+  })
+  return result
+}
+
+/**
+ * 获取处理后的选择文本项 在当前父容器中的偏移 Index
+ * @param container
+ * @returns
+ */
+export const getCurrentSelectionOffset = (container: HTMLElement) => {
+  let offset = container.children.length - 1 // 默认就在最后
+  const range = window.getSelection()?.getRangeAt(0).cloneRange()
+  // 获取当前选中元素所在的节点
+  const rangeContainer = range?.endContainer
+
+  const isContainerSelf = rangeContainer === container
+
+  if (isContainerSelf) offset = range?.startOffset || offset
+  // 直接取当前节点的 offset
+  else {
+    const isParentContainer = rangeContainer?.parentElement === container
+    if (isParentContainer) {
+      offset = getElementIndexByParent(rangeContainer) || offset
+    } else {
+      console.log(rangeContainer)
+    }
+  }
+
+  console.log(offset)
+  // 需要考虑计算回车的数量
+  const text = range?.toString() || ''
+  const textParagraphLength =
+    text?.replace(/\n\n/g, '\n')?.match(/\n/g)?.length || 0
+  return offset + textParagraphLength
 }
