@@ -8,7 +8,9 @@ import { ChangeEvent, memo, useEffect, useRef, useState } from 'react'
 import { MultiStyleTextProps } from '../type/Style'
 import {
   checkHtml,
+  getCurrentSelectionOffset,
   handleAfterPaste,
+  handleContent,
   insertHtmlAtSelectionEnd
 } from './MultiStyleTextMethod'
 
@@ -31,9 +33,9 @@ export const MultiStyleText = memo(
     const [Editable, setEditable] = useState(editable)
     const [CurrentSpace, setCurrentSpace] = useState(textSpace)
 
-    useEffect(() => {
-      setText({ html: content })
-    }, [content])
+    // useEffect(() => {
+    //   setText({ html: content })
+    // }, [content])
     const init =
       CurrentStyle === 'ep-blocks'
         ? { width: '600px', padding: '165px 9px 28px 12px' }
@@ -58,12 +60,13 @@ export const MultiStyleText = memo(
 
     useEffect(() => {
       setEditable(editable)
-      if (getMultiText && editable) getMultiText(text.current || '')
+      if (getMultiText && editable) getMultiText(texts.html || '')
     }, [editable])
 
     useEffect(() => {
-      if (!checkHtml(text.current)) {
-        text.current = `<div>${text.current}</div>`
+      if (!checkHtml(texts.html)) {
+        // text.current =
+        setText({ html: `<div>${texts.html}</div>` })
       }
       if (getHeight) getHeight({ height: null })
     }, [CurrentStyle, CurrentSpace])
@@ -86,8 +89,10 @@ export const MultiStyleText = memo(
       const cleanHtml = ev.clipboardData.getData('text')
       ev.clipboardData.setData('text/html', cleanHtml)
       insertHtmlAtSelectionEnd(cleanHtml, false)
-
-      handleAfterPaste((ev as unknown) as ChangeEvent<Element>)
+      const offset = getCurrentSelectionOffset(ev.currentTarget)
+      const content = handleContent((ev as unknown) as ChangeEvent)
+      setText({ html: content })
+      handleAfterPaste((ev as unknown) as ChangeEvent<Element>, content, offset)
       ev.preventDefault()
       // if (getHeight) getHeight({ height: ev.currentTarget.clientHeight })
     }

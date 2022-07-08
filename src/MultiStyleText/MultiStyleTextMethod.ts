@@ -34,10 +34,7 @@ export const Ize = (str: string) => {
   const doc = parse.parseFromString(str, 'text/html')
   return doc.body.innerHTML
 }
-
-export const handleAfterPaste = (ev: ChangeEvent) => {
-  const CurrentDom = ev.currentTarget as HTMLElement
-
+export const handleContent = (ev: ChangeEvent) => {
   const CleanDiv = /<div>/g
   const ReplaceEndDiv = /<\/div>/g
 
@@ -54,10 +51,37 @@ export const handleAfterPaste = (ev: ChangeEvent) => {
     StrHtml = `<div>${StrHtml}</div>`
   }
   StrHtml = StrHtml.replace(NullDiv, '')
+  return StrHtml
+}
 
+export const handleAfterPaste = (
+  ev: ChangeEvent,
+  content: string,
+  offset: number
+) => {
+  const CurrentDom = ev.currentTarget as HTMLElement
+
+  // const CleanDiv = /<div>/g
+  // const ReplaceEndDiv = /<\/div>/g
+
+  // const StandardString = ev.currentTarget.innerHTML
+  //   .replace(CleanDiv, '')
+  //   .replace(ReplaceEndDiv, '\n')
+
+  // const regex = /(\r)?\n/gi
+  // const NullDiv = /<div><\/div>/g
+
+  // let StrHtml = StandardString.replace(regex, '</div><div>')
+
+  // if (!StrHtml.startsWith('<div>') && !StrHtml.endsWith('</div>')) {
+  //   StrHtml = `<div>${StrHtml}</div>`
+  // }
+  // StrHtml = StrHtml.replace(NullDiv, '')
+  const StrHtml = content
+  // || handleContent(ev)
   let sel: any
   if (window.getSelection) {
-    const offset = getCurrentSelectionOffset(CurrentDom)
+    // const offset = getCurrentSelectionOffset(CurrentDom)
     sel = window.getSelection()
     const StartContent = CurrentDom.firstChild
     const EndContent = CurrentDom.lastChild
@@ -100,15 +124,15 @@ export const checkHtml = (htmlStr?: string) => {
  * 指针移动到结尾
  * @param el
  */
-export const movePointerToEnd = (el: HTMLElement) => {
-  el.focus()
-  const range = document.createRange()
-  range.selectNodeContents(el)
-  range.collapse(false)
-  const sel = window.getSelection()
-  sel && sel.removeAllRanges()
-  sel && sel.addRange(range)
-}
+// export const movePointerToEnd = (el: HTMLElement) => {
+//   el.focus()
+//   const range = document.createRange()
+//   range.selectNodeContents(el)
+//   range.collapse(false)
+//   const sel = window.getSelection()
+//   sel && sel.removeAllRanges()
+//   sel && sel.addRange(range)
+// }
 
 /**
  * 指针移动到某个node节点上
@@ -150,10 +174,18 @@ export const getCurrentSelectionOffset = (container: HTMLElement) => {
   const rangeContainer = range?.endContainer
 
   const isContainerSelf = rangeContainer === container
-
-  if (isContainerSelf) offset = range?.startOffset || offset
-  // 直接取当前节点的 offset
-  else {
+  if (isContainerSelf) {
+    if ((range?.startOffset || offset) === 0) {
+      // 编辑框内容删除后--》粘贴
+      offset = offset + 1
+    } else {
+      offset =
+        (range?.startOffset || offset) > 0
+          ? (range?.startOffset || offset) - 1
+          : range?.startOffset || offset
+    }
+    // 直接取当前节点的 offset
+  } else {
     const isParentContainer = rangeContainer?.parentElement === container
     if (isParentContainer) {
       offset =
