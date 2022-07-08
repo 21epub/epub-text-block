@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.1](https://github.com/21epub/epub-text-block/compare/v0.1.16...v1.0.1) (2022-07-08)
+
+
+### Bug Fixes
+
+* 🐛 复制时样式换行消失 ([a97850e](https://github.com/21epub/epub-text-block/commit/a97850e84641e49523f89e7922a5934923f30d30))
+* 🐛 eslint fix ([f4fda02](https://github.com/21epub/epub-text-block/commit/f4fda021866ef4e8554dbac937154cb6bdff7876))
+* 🐛 getMultiText获取内容调整 ([130e690](https://github.com/21epub/epub-text-block/commit/130e6904d38e64969526d7c4cd17890fad805847))
+* patch for pointer to the end after paste ([905cb8f](https://github.com/21epub/epub-text-block/commit/905cb8fc2bc7c541708c4c04b5724dc2e8a59831))
+* text paste cursor fix for middle position ([cb13055](https://github.com/21epub/epub-text-block/commit/cb13055d693e5581a548106ca5320e118e306390))
+
 ### [0.1.16](https://github.com/li-qiuli/text-block/compare/v0.1.15...v0.1.16) (2022-04-19)
 
 
