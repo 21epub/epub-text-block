@@ -3,7 +3,7 @@
 import * as React from 'react'
 import ContentEditable from 'react-contenteditable'
 import styles from './MultiStyleText.module.less'
-import { memo, useEffect, useRef, useState } from 'react'
+import { ChangeEvent, memo, useEffect, useRef, useState } from 'react'
 
 import { MultiStyleTextProps } from '../type/Style'
 import {
@@ -84,7 +84,7 @@ export const MultiStyleText = memo(
       ev.clipboardData.setData('text/html', cleanHtml)
       insertHtmlAtSelectionEnd(cleanHtml, false)
 
-      handleAfterPaste(ev)
+      handleAfterPaste((ev as unknown) as ChangeEvent<Element>)
       ev.preventDefault()
       // if (getHeight) getHeight({ height: ev.currentTarget.clientHeight })
     }
