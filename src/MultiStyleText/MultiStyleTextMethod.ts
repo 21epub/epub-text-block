@@ -1,5 +1,7 @@
 /* eslint-disable prettier/prettier */
 
+import { ChangeEvent } from 'react'
+
 export const insertHtmlAtSelectionEnd = (html: string, isBefore: boolean) => {
   let sel: any, range
   if (window.getSelection) {
@@ -33,8 +35,8 @@ export const Ize = (str: string) => {
   return doc.body.innerHTML
 }
 
-export const handleAfterPaste = (ev) => {
-  const CurrentDom = ev.currentTarget
+export const handleAfterPaste = (ev: ChangeEvent) => {
+  const CurrentDom = ev.currentTarget as HTMLElement
 
   const CleanDiv = /<div>/g
   const ReplaceEndDiv = /<\/div>/g
@@ -65,8 +67,8 @@ export const handleAfterPaste = (ev) => {
       const el = document.createElement('div')
       el.innerHTML = Html
 
-      range && range.setStartBefore(StartContent)
-      range && range.setEndAfter(EndContent)
+      range && range.setStartBefore(StartContent as Node)
+      range && range.setEndAfter(EndContent as Node)
       range && range.deleteContents()
 
       const frag = document.createDocumentFragment()
@@ -82,7 +84,7 @@ export const handleAfterPaste = (ev) => {
             offset < CurrentDom.children.length
               ? offset
               : CurrentDom.children.length - 1
-          ]
+          ] as HTMLElement
         )
       }
     }
