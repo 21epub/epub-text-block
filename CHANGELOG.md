@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.2](https://github.com/21epub/epub-text-block/compare/v1.1.1...v1.1.2) (2022-07-08)
+
+
+### Bug Fixes
+
+* 🐛 没有内容时，多按一个delete，样式不删除 ([8f246ac](https://github.com/21epub/epub-text-block/commit/8f246ac3db94220e2881ef44fce2f27c351837df))
+
 ### [1.1.1](https://github.com/21epub/epub-text-block/compare/v1.1.0...v1.1.1) (2022-07-08)
 
 
