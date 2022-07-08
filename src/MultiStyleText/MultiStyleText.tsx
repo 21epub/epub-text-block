@@ -81,6 +81,7 @@ export const MultiStyleText = memo(
       ) {
         setText({ html: '<div><br></div>' })
       }
+      setText({ html: evt.currentTarget?.innerHTML || '<div><br></div>' })
       if (getHeight) getHeight({ height: evt.currentTarget.clientHeight })
       if (getMultiText)
         getMultiText(evt.currentTarget?.innerHTML || '<div><br></div>')
@@ -91,7 +92,7 @@ export const MultiStyleText = memo(
       insertHtmlAtSelectionEnd(cleanHtml, false)
       const offset = getCurrentSelectionOffset(ev.currentTarget)
       const content = handleContent((ev as unknown) as ChangeEvent)
-      setText({ html: content })
+      // setText({ html: content })
       handleAfterPaste((ev as unknown) as ChangeEvent<Element>, content, offset)
       ev.preventDefault()
       // if (getHeight) getHeight({ height: ev.currentTarget.clientHeight })
