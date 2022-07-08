@@ -31,6 +31,9 @@ export const MultiStyleText = memo(
     const [Editable, setEditable] = useState(editable)
     const [CurrentSpace, setCurrentSpace] = useState(textSpace)
 
+    useEffect(() => {
+      setText({ html: content })
+    }, [content])
     const init =
       CurrentStyle === 'ep-blocks'
         ? { width: '600px', padding: '165px 9px 28px 12px' }
@@ -88,7 +91,7 @@ export const MultiStyleText = memo(
       ev.preventDefault()
       // if (getHeight) getHeight({ height: ev.currentTarget.clientHeight })
     }
-    console.log(texts.html)
+    console.log(texts.html, text.current)
 
     return (
       <ContentEditable
