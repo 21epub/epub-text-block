@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.1](https://github.com/21epub/epub-text-block/compare/v1.1.0...v1.1.1) (2022-07-08)
+
+
+### Bug Fixes
+
+* 🐛 setText ([9b8b612](https://github.com/21epub/epub-text-block/commit/9b8b6125e310ab27d4d680907d2612f9204b3c04))
+
 ## [1.1.0](https://github.com/21epub/epub-text-block/compare/v1.0.2...v1.1.0) (2022-07-08)
 
 
