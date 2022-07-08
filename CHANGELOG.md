@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/21epub/epub-text-block/compare/v1.0.2...v1.1.0) (2022-07-08)
+
+
+### Features
+
+* 🎸 转为受控组件 ([7171514](https://github.com/21epub/epub-text-block/commit/717151423780f91ff2911eb26c737f3a08a685eb))
+
 ### [1.0.2](https://github.com/21epub/epub-text-block/compare/v1.0.1...v1.0.2) (2022-07-08)
 
 
