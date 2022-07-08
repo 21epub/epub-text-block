@@ -76,7 +76,8 @@ export const MultiStyleText = memo(
         setText({ html: '<div><br></div>' })
       }
       if (getHeight) getHeight({ height: evt.currentTarget.clientHeight })
-      if (getMultiText) getMultiText(evt.currentTarget?.innerHTML || '')
+      if (getMultiText)
+        getMultiText(evt.currentTarget?.innerHTML || '<div><br></div>')
     }
     const handlePaste = (ev: React.ClipboardEvent<HTMLDivElement>) => {
       const cleanHtml = ev.clipboardData.getData('text')
