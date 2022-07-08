@@ -156,7 +156,8 @@ export const getCurrentSelectionOffset = (container: HTMLElement) => {
   else {
     const isParentContainer = rangeContainer?.parentElement === container
     if (isParentContainer) {
-      offset = getElementIndexByParent(rangeContainer) || offset
+      offset =
+        (rangeContainer && getElementIndexByParent(rangeContainer)) || offset
     } else {
       console.log(rangeContainer)
     }
