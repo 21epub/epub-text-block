@@ -80,8 +80,10 @@ export const MultiStyleText = memo(
         evt.currentTarget.innerHTML === '<br>'
       ) {
         setText({ html: '<div><br></div>' })
+      } else {
+        setText({ html: evt.currentTarget?.innerHTML || '<div><br></div>' })
       }
-      setText({ html: evt.currentTarget?.innerHTML || '<div><br></div>' })
+
       if (getHeight) getHeight({ height: evt.currentTarget.clientHeight })
       if (getMultiText)
         getMultiText(evt.currentTarget?.innerHTML || '<div><br></div>')
