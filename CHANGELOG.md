@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.2](https://github.com/21epub/epub-text-block/compare/v1.0.1...v1.0.2) (2022-07-08)
+
+
+### Bug Fixes
+
+* 🐛 传入的文本改变 ([bad6652](https://github.com/21epub/epub-text-block/commit/bad66523e7516135ca357e6a34e2750f3fc0bdf3))
+* 🐛 ts fix ([7396ee8](https://github.com/21epub/epub-text-block/commit/7396ee85ad59f75bf92b3f21b1f320e632042e24))
+* 🐛 ts补充 ([b340de6](https://github.com/21epub/epub-text-block/commit/b340de6a46eea92438ef71420c81cfcb6652e0be))
+* 🐛 ts补充 ([655fa5e](https://github.com/21epub/epub-text-block/commit/655fa5e767741aea4c45987d335c372d769ff989))
+
 ### [1.0.1](https://github.com/21epub/epub-text-block/compare/v0.1.16...v1.0.1) (2022-07-08)
 
 
