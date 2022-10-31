@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/21epub/epub-text-block/compare/v1.1.2...v1.2.0) (2022-10-31)
+
+
+### Features
+
+* 添加无序列表-小飞机 ([1de8fa9](https://github.com/21epub/epub-text-block/commit/1de8fa9cd1c92b6471aef57579fb4982b8f05a71))
+
 ### [1.1.2](https://github.com/21epub/epub-text-block/compare/v1.1.1...v1.1.2) (2022-07-08)
 
 
