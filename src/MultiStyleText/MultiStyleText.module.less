@@ -178,7 +178,6 @@
       left: 0;
       color: currentColor;
       font-size: 1em;
-      line-height: 1.5em;
       content: '●';
     }
   }
@@ -197,7 +196,6 @@
       color: currentColor;
       font-size: 1em;
       font-family: FontAwesome;
-      line-height: 1.5em;
       content: '\f10c';
     }
   }
@@ -217,8 +215,18 @@
       font-weight: bolder;
       font-size: 1em;
       font-family: FontAwesome;
-      line-height: 1.5em;
       content: '\f096';
+    }
+  }
+}
+
+// 无序列表-空心方块-加粗
+.ep-list-bold-marker {
+  div {
+    &::before {
+      // FontAwesome只提供两种字重，只好用text-shadow模拟一下，oh boy。
+      text-shadow: 0.5px 0 currentColor, -0.5px 0 currentColor,
+        0 0.5px currentColor, 0 -0.5px currentColor;
     }
   }
 }
@@ -236,7 +244,6 @@
       color: currentColor;
       font-size: 1em;
       font-family: FontAwesome;
-      line-height: 1.5em;
       content: '\f00c';
     }
   }
@@ -255,7 +262,6 @@
       color: currentColor;
       font-size: 1em;
       font-family: FontAwesome;
-      line-height: 1.5em;
       content: '\f072';
       rotate: 45deg;
     }

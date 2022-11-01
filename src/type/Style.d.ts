@@ -10,6 +10,7 @@ export interface MultiStyleTextProps {
     getMultiText?: (text: string) => void
     getHeight?: (value: { height: number | null }) => void
     className?: string
+    boldMarker?: boolean
   }
 }
 

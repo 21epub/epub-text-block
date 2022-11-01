@@ -24,7 +24,8 @@ export const MultiStyleText = memo(
       textSpace,
       content,
       getMultiText,
-      getHeight
+      getHeight,
+      boldMarker
     }
   }: MultiStyleTextProps) => {
     const [texts, setText] = useState({ html: content })
@@ -106,7 +107,7 @@ export const MultiStyleText = memo(
         onPaste={handlePaste}
         className={`editable ${className} ${styles[CurrentStyle || '']} ${
           styles[CurrentSpace || '']
-        }`}
+        } ${boldMarker ? styles['ep-list-bold-marker'] : ''}`}
         tagName='div'
         style={{ ...ContentEditableDefauleStyle, ...editorstyle }}
         html={texts.html || '<div><br></div>'}
