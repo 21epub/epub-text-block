@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.1](https://github.com/21epub/epub-text-block/compare/v1.2.0...v1.2.1) (2022-11-01)
+
+
+### Bug Fixes
+
+* 无序列表-空心方块-加粗 ([7ded161](https://github.com/21epub/epub-text-block/commit/7ded161130fe0033348c1486461852789b15686a))
+
 ## [1.2.0](https://github.com/21epub/epub-text-block/compare/v1.1.2...v1.2.0) (2022-10-31)
 
 
